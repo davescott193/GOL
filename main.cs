@@ -23,9 +23,10 @@ class MainClass {
 
     int[,] nextGenArray = new int[array.GetLength(0), array.GetLength(1)];
 
+    // go through columns
     for (int i = 1; i < array.GetLength(0)-1;  i ++)
 		{
-			
+			// go through rows
 			for (int j = 1; j < array.GetLength(1)-1; j++)
 			{
 		
@@ -82,7 +83,9 @@ class MainClass {
 					Console.Write (array[i,j]);
 			}
 			Console.WriteLine();
+			
     }
+		Console.WriteLine("----------");
   }
 //Filling the grid with 1s and 0s
 	public static int[,] PopGrid(int[,] array)
@@ -97,6 +100,7 @@ class MainClass {
 			}
 		
     }		
+		
 		return array;
   }
 }
