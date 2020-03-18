@@ -5,10 +5,10 @@ class MainClass {
 	{
 			int[,] array = new int[10, 10];
 
-      //array[0,0] = 5;
+//array[0,0] = 5;
 			array = PopGrid (array);
       
-
+//The variables given for the grid sizes
       PrintGrid(array);
 
       PrintGrid(NextGen(array));
@@ -16,7 +16,8 @@ class MainClass {
 
 
   }
-  
+  //Code that puts conways laws into the game
+	//This also tells the game which is a 1 and 0
   public static int[,] NextGen(int[,] array)
   {
 
@@ -53,9 +54,9 @@ class MainClass {
             neighbourCount++;
           }
           
-          Console.WriteLine("number of neighbours is: " + neighbourCount);
+          //Console.WriteLine("number of neighbours is: " + neighbourCount);
 
-          // populate nextGenArray with decisions about whether cells are dead or alive
+// populate nextGenArray with decisions about whether cells are dead or alive
 
 					if (neighbourCount < 2 || neighbourCount > 3)
 					{
@@ -64,18 +65,13 @@ class MainClass {
 					{
 							nextGenArray [i,j] = 1;
 					}
-
-
-
-
-		
       }
     }
 		
 		
 		return nextGenArray;
   }
-
+//The code that prints the game to the console
 	public static void PrintGrid(int[,] array)
   {
 		for (int i = 0; i < array.GetLength(0);  i ++)
@@ -88,7 +84,7 @@ class MainClass {
 			Console.WriteLine();
     }
   }
-
+//Filling the grid with 1s and 0s
 	public static int[,] PopGrid(int[,] array)
   {
 		Random random = new Random();
@@ -100,12 +96,7 @@ class MainClass {
 					array[i,j] = random.Next(2) ;
 			}
 		
-    }
+    }		
 		return array;
   }
-  
-		
-
-
-
 }
