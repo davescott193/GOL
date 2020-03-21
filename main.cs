@@ -1,18 +1,59 @@
 using System;
+using System.Timers;
+using System.Threading;
 
 class MainClass {
+	public static decimal restartDelay;
   public static void Main (string[] args) 
 	{
+	
+
 			int[,] array = new int[10, 10];
 
-//array[0,0] = 5;
 			array = PopGrid (array);
-      
+
+//im trying to get user input to tell the code how fast to loop(store the value of an integer)
+// MR W: You should be able to figure that out from the code below.
+//yea it looks a lot better now thanks a lot
+
+
+
+Console.WriteLine("How many times?");
+Console.WriteLine("Enter choice: ");
+string input = Console.ReadLine();
+
+int numberOfLoops = Int32.Parse(input);
+
+Console.WriteLine("How FAST?");
+Console.WriteLine("Enter choice: ");
+string speed = Console.ReadLine();
+
+int restartDelay = Int32.Parse(speed);
+//float restartDelayy = 1 / restartDelay;
+
+
+for(int i = 1; i < numberOfLoops; i++)
+{
+
+  PrintGrid(array); 
+
+  array = NextGen(array); // get the next array
+
+  Thread.Sleep(TimeSpan.FromSeconds(1/restartDelay)); // sleep for one sec
+
+ // probably can't do this until for loop done. THere is no stop.
+// Mr W: explore clearing the console
+
+
+
+// the console weird characters is weird. I've seen it before. Can't remember why or the fix. Will let you know if I think of anything. Don't stress about it.
+
+}
+
 //The variables given for the grid sizes
       PrintGrid(array);
 
-      PrintGrid(NextGen(array));
-
+       PrintGrid(NextGen(array));
 
 
   }
