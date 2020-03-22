@@ -3,31 +3,35 @@ using System.Timers;
 using System.Threading;
 
 class MainClass {
-	public static decimal restartDelay;
+	public static double restartDelay;
   public static void Main (string[] args) 
 	{
-	
-
-			int[,] array = new int[10, 10];
+				int[,] array = new int[20, 20];
 
 			array = PopGrid (array);
 
+		Console.WriteLine ("Welcome to Conways Game of Life");
+		Console.WriteLine ("This game works in stages called 'Generations'");
+		Console.WriteLine ("With each new geneartion if a cell has no partner. it dies.");
+		Console.WriteLine ("if it has 2 partners it is stable.");
+		Console.WriteLine ("if it has 3 neighbours it will form a new cell in the next generation.");
+
+		
 //im trying to get user input to tell the code how fast to loop(store the value of an integer)
 // MR W: You should be able to figure that out from the code below.
 //yea it looks a lot better now thanks a lot
 
 
 
-Console.WriteLine("How many times?");
+Console.WriteLine("How many Generations do you wish to have?");
 Console.WriteLine("Enter choice: ");
 string input = Console.ReadLine();
 
 int numberOfLoops = Int32.Parse(input);
 
-Console.WriteLine("How FAST?");
+Console.WriteLine("How FAST do you want the generations to appear?(Milliseconds (1second = 1000)");
 Console.WriteLine("Enter choice: ");
 string speed = Console.ReadLine();
-
 int restartDelay = Int32.Parse(speed);
 //float restartDelayy = 1 / restartDelay;
 
@@ -39,7 +43,7 @@ for(int i = 1; i < numberOfLoops; i++)
 
   array = NextGen(array); // get the next array
 
-  Thread.Sleep(TimeSpan.FromSeconds(1/restartDelay)); // sleep for one sec
+  Thread.Sleep(TimeSpan.FromMilliseconds(restartDelay)); // sleep for one sec
 
  // probably can't do this until for loop done. THere is no stop.
 // Mr W: explore clearing the console
