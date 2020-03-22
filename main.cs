@@ -5,6 +5,7 @@ using System.Threading;
 class MainClass {
 	public static double restartDelay;
   public static void Main (string[] args) 
+ 
 	{
 				int[,] array = new int[20, 20];
 
@@ -15,7 +16,7 @@ class MainClass {
 		Console.WriteLine ("With each new geneartion if a cell has no partner. it dies.");
 		Console.WriteLine ("if it has 2 partners it is stable.");
 		Console.WriteLine ("if it has 3 neighbours it will form a new cell in the next generation.");
-
+	Console.WriteLine ("Type "Yes" if you would like to create your own sequence or type "Continue" if you want to use a randomized seed");
 		
 //im trying to get user input to tell the code how fast to loop(store the value of an integer)
 // MR W: You should be able to figure that out from the code below.
